@@ -1,4 +1,6 @@
 import React from 'react'
+import Logo from '.././assets/cyberScope-logo.svg';
+
 
 const Header = () => {
   return (
