@@ -124,7 +124,7 @@ const Scan = () => {
         {loading && <p>Loading...</p>}
         {error && (
           <p>
-            <strong>Error:</strong> {error}
+            <strong className='text-[#A7FF18]'>Error:</strong> {error}
           </p>
         )}
         {data && (
