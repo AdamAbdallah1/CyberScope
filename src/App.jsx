@@ -122,7 +122,7 @@ function App() {
         className={`p-4 rounded w-full ${
           error
             ? 'bg-red-900 text-red-200'
-            : 'bg-black text-[#A7FF18] border-2 border-[#A7FF18]'
+            : 'bg-black text-red-500 border-2 border-[#A7FF18]'
         }`}
       >
         {loading && <p>Loading...</p>}
@@ -134,30 +134,35 @@ function App() {
         {data && (
           <div className="flex flex-col gap-2 cursor-crosshair">
             <p>
-              <strong className="text-white">Domain:</strong> {domain}
+              <strong className="text-[#A7FF18]">Domain:</strong> {domain}
             </p>
             <p>
-              <strong className="text-white">Resolved IP:</strong> {ip}
+              <strong className="text-[#A7FF18]">Resolved IP:</strong> {ip}
             </p>
             <p>
-              <strong className="text-white">Hostnames:</strong>{' '}
+              <strong className="text-[#A7FF18]">Hostnames:</strong>{' '}
               {data.hostnames?.length ? data.hostnames.join(', ') : 'None'}
             </p>
             <p>
-              <strong className="text-white">Open Ports:</strong>{' '}
+              <strong className="text-[#A7FF18]">Open Ports:</strong>{' '}
               {data.ports?.length ? data.ports.join(', ') : 'None'}
             </p>
             <p>
-              <strong className="text-white">Vulns:</strong>{' '}
+              <strong className="text-[#A7FF18]">Vulns:</strong>{' '}
               {data.vulns?.length ? data.vulns.join(', ') : 'None'}
             </p>
             <p>
-              <strong className="text-white">Tags:</strong>{' '}
+              <strong className="text-[#A7FF18]">Tags:</strong>{' '}
               {data.tags?.length ? data.tags.join(', ') : 'None'}
             </p>
           </div>
         )}
       </div>
+      <footer className="w-full text-center py-4 text-[#A7FF18]">
+        <p className="text-xs opacity-80 flex justify-center items-center gap-2">
+          <span className="text-red-400">&copy;</span> 2025 CyberScope. All rights reserved.
+        </p>
+      </footer>
     </main>
   );
 }
