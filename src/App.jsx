@@ -6,11 +6,11 @@ import Scan from './components/Scan';
 
 const App = () => {
   return (
-    <>
+    <main className='flex flex-col mt-10'>
       <Header />
       <Scan />
       <Footer />
-    </>
+    </main>
   )
 }
 
