@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import Logo from './assets/cyberScope-logo.svg';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 function App() {
   const [data, setData] = useState(null);
@@ -47,8 +48,8 @@ function App() {
 
   return (
     <main className="w-1/2 flex flex-col gap-10 justify-center items-center m-auto p-10">
+      <Header />
       <form className="flex flex-col justify-center items-center gap-10" onSubmit={fetchData}>
-          <img src={Logo} width={100} alt="CyberScope Logo" />
 
         <div className="relative w-full max-w-md mx-auto font-mono">
           <label
@@ -156,11 +157,7 @@ function App() {
           </div>
         )}
       </div>
-      <footer className="w-full text-center py-4 text-[#A7FF18]">
-        <p className="text-xs opacity-80 flex justify-center items-center gap-2">
-          <span className="text-red-400">&copy;</span> 2025 CyberScope. All rights reserved.
-        </p>
-      </footer>
+      <Footer />
     </main>
   );
 }
