@@ -48,9 +48,7 @@ function App() {
   return (
     <main className="w-1/2 flex flex-col gap-10 justify-center items-center m-auto p-10">
       <form className="flex flex-col justify-center items-center gap-10" onSubmit={fetchData}>
-        <h1 className="text-3xl font-bold">
           <img src={Logo} width={100} alt="CyberScope Logo" />
-        </h1>
 
         <div className="relative w-full max-w-md mx-auto font-mono">
           <label
@@ -64,7 +62,7 @@ function App() {
 
           <div className="relative">
             <input
-              className="w-full bg-transparent text-[#A7FF18] text-base border-2 border-[#A7FF18] rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:border-[#A7FF18] placeholder-[#d4ff8f] pr-10"
+              className="w-full bg-transparent text-red-500 text-base border-2 border-[#A7FF18] rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:border-[#A7FF18] placeholder-[#d4ff8f] pr-10"
               placeholder="➤ ENTER DOMAIN"
               id="domain"
               type="text"
