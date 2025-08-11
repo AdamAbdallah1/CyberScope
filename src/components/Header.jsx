@@ -4,7 +4,7 @@ import Logo from '.././assets/cyberScope-logo.svg';
 
 const Header = () => {
   return (
-    <header>
+    <header className='flex justify-center items-center'>
         <img src={Logo} width={100} alt="CyberScope Logo" />
     </header>
   )
