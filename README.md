@@ -22,7 +22,7 @@ A minimal **React-based security scanning tool** that allows you to:
 git clone https://github.com/AdamAbdallah1/CyberScope
 
 # 2️⃣ Navigate into the folder
-cd react-security-scanner
+cd CyberScope
 
 # 3️⃣ Install dependencies
 npm install
