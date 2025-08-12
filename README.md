@@ -1,12 +1,38 @@
-# React + Vite
+# 🔍 Simple React Security Scanner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal **React-based security scanning tool** that allows you to:
+- Scan a domain for open ports
+- View basic security details (e.g., HTTP headers, SSL info, etc.)
+- Keep the interface **simple and beginner-friendly**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 🌐 **Domain Scanning** – Enter a domain and get port details.
+- 📊 **Basic Security Info** – Shows headers and SSL certificate details.
+- ⚡ **Fast & Simple UI** – Built with React for speed and responsiveness.
+- 🎨 **Clean Design** – Minimal, modern layout for easy usage.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Installation & Setup
+
+```bash
+# 1️⃣ Clone the repository
+git clone https://github.com/AdamAbdallah1/CyberScope
+
+# 2️⃣ Navigate into the folder
+cd react-security-scanner
+
+# 3️⃣ Install dependencies
+npm install
+
+# 4️⃣ Run the project
+npm run dev
+
+📜 License
+
+This project is open-source and available under the MIT License.
+
+
+---
