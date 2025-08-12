@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 
 const Scan = () => {
+
   const [data, setData] = useState(null);
   const [domain, setDomain] = useState('');
   const [ip, setIp] = useState('');
