@@ -19,8 +19,15 @@ const Login = () => {
     <main className='mt-5'>
         <Header/>
         <form className='flex flex-col justify-center items-center gap-5'>
-            <div className='w-100 flex flex-col gap-3 p-8 border-2 border-[#A7FF18] rounded-3xl'>
-                <p className="text-center text-3xl text-gray-300 mb-4">Register</p>
+            <div className='w-100 flex flex-col gap-3 p-8 border-2 border-[#A7FF18] rounded-3xl items-center'>
+                <div className="mt-4 flex flex-col gap-2">
+                    <p className="text-xs text-[#A7FF18] opacity-80 flex items-center gap-2">
+                        <span className="w-5 h-5 bg-red-500 rounded-full"></span>
+                        <span>
+                            <span className="text-[#A7FF18] text-3xl font-sans">Login</span>
+                        </span>
+                    </p>
+                </div>
 
                 <div className='flex flex-col lg:flex-row gap-2 justify-center items-center'>
                     <FaRegUserCircle size={28} color='#A7FF18'/>
