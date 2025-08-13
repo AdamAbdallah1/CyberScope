@@ -17,7 +17,7 @@ const Login = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("User logged in: ", userCredential.user);
-      navigate("/scan");
+      navigate("/CyberScope/scan");
     } catch (err) {
       setError(err.message);
     }
