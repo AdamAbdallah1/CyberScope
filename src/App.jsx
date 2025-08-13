@@ -3,7 +3,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Scan from './components/Scan';
-import Login from './components/Auth/Login';
+{/* import Login from './components/Auth/Login'; */}
 
 const App = () => {
   return (
