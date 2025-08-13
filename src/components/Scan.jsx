@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
+import Navbar from './Navbar';
 
 const Scan = () => {
   const [data, setData] = useState(null);
@@ -11,11 +12,10 @@ const Scan = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Redirect if not logged in
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
-        navigate('/CyberScope'); // Login page
+        navigate('/CyberScope');
       }
     });
     return () => unsubscribe();
@@ -53,27 +53,11 @@ const Scan = () => {
     }
   };
 
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      navigate('/CyberScope'); // Redirect to login
-    } catch (err) {
-      console.error('Logout error:', err);
-    }
-  };
 
   return (
+   <>
+     <Navbar />
     <main className="w-1/2 flex flex-col gap-10 justify-center items-center m-auto p-10">
-      
-      <div className="w-full flex justify-end mb-4">
-        <button
-          onClick={handleLogout}
-          className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition"
-        >
-          Logout
-        </button>
-      </div>
-
       <form className="flex flex-col justify-center items-center gap-10" onSubmit={fetchData}>
         <div className="relative w-full max-w-md font-mono">
           <label className="mb-3 text-[#A7FF18] text-sm tracking-wider flex items-center" htmlFor="domain">
@@ -110,7 +94,6 @@ const Scan = () => {
           </span>
         </button>
       </form>
-
       <div className={`p-4 rounded-tl-3xl rounded-br-3xl w-fit ${error ? 'text-red-200' : 'text-red-500 border-2 border-[#A7FF18]'}`}>
         {loading && <p>Loading...</p>}
         {error && <p className="w-60"><strong className="text-[#A7FF18]">Error:</strong> {error}</p>}
@@ -126,6 +109,7 @@ const Scan = () => {
         )}
       </div>
     </main>
+   </>
   );
 };
 
