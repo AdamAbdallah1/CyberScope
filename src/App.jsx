@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Scan from './components/Scan';
 import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/scan" element={<Scan />} />
       </Routes>
       <Footer />
