@@ -4,6 +4,7 @@ import { auth } from "../../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
+import { Link } from "react-router-dom";
 import Header from '../Header';
 
 
@@ -67,7 +68,9 @@ const Login = () => {
                 Login
               </button>
 
-              <a href="/CyberScope/register" className="text-sm text-[#A7FF18] hover:underline">Don't have an account? Register</a>
+              <Link to="/CyberScope/register" className="text-sm text-[#A7FF18] hover:underline">
+                Don't have an account? Register
+              </Link>
 
               {error && <p className='text-red-600 mt-2'>{error}</p>}
           </div>
