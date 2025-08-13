@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../firebase';
 import Logo from '../assets/cyberScope-logo.svg';
+import { IoIosMenu } from 'react-icons/io';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -29,13 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="relative flex items-center h-16 px-4">
-      {userEmail && (
-        <span className="absolute left-4 text-[#A7FF18] font-semibold">
-          {userEmail}
-        </span>
-      )}
-
+    <header className="relative flex items-center h-20 px-4">
       <img
         src={Logo}
         alt="CyberScope Logo"
@@ -44,11 +40,31 @@ const Navbar = () => {
       />
 
       <button
-        onClick={handleLogout}
-        className="absolute right-4 px-5 py-2 text-[#A7FF18] rounded-md border-1 transition-all duration-300 hover:shadow-[0_0_20px_10px_rgba(167,255,24,0.6)] active:scale-95"
+        className="absolute right-4 md:hidden"
+        onClick={() => setMenuOpen(!menuOpen)}
       >
-        Logout
+        <IoIosMenu size={28} className="text-[#A7FF18]" />
       </button>
+
+      <nav
+        className={`absolute top-full right-0 mt-2 w-48 border border-gray-700 rounded-md shadow-lg md:hidden transition-all duration-300 ${
+          menuOpen ? "block" : "hidden"
+        }`}
+      >
+        <ul className="flex flex-col p-4 gap-3">
+          {userEmail && (
+            <li className="text-[#A7FF18] truncate">{userEmail}</li>
+          )}
+          <li>
+            <button
+              onClick={handleLogout}
+              className="w-full text-[#A7FF18] hover:text-white"
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
