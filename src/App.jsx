@@ -15,10 +15,6 @@ const App = () => {
         </div>
       </div>
 
-      <div className='container mx-auto px-8 '>
-        <Header />
-      </div>
-
       <Routes>
         <Route path="/CyberScope" element={<Login />} />
         <Route path="/CyberScope/register" element={<Register />} />
