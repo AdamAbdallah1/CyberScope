@@ -118,13 +118,13 @@ const Scan = () => {
       <div
         className={`p-4 rounded w-fit ${
           error
-            ? 'bg-red-900 text-red-200'
-            : 'bg-black text-red-500 border-2 border-[#A7FF18]'
+            ? 'text-red-200'
+            : 'text-red-500 border-2 border-[#A7FF18]'
         }`}
       >
         {loading && <p>Loading...</p>}
         {error && (
-          <p>
+          <p className='w-60'>
             <strong className='text-[#A7FF18]'>Error:</strong> {error}
           </p>
         )}
