@@ -57,7 +57,7 @@ const Scan = () => {
   return (
    <>
      <Navbar />
-    <main className="w-1/2 flex flex-col gap-10 justify-center items-center m-auto p-10">
+    <main className="w-1/2 flex flex-col gap-10 justify-center items-center m-auto p-10 mt-15">
       <form className="flex flex-col justify-center items-center gap-10" onSubmit={fetchData}>
         <div className="relative w-full max-w-md font-mono">
           <label className="mb-3 text-[#A7FF18] text-sm tracking-wider flex items-center" htmlFor="domain">
