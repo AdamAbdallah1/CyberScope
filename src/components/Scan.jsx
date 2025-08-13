@@ -116,7 +116,7 @@ const Scan = () => {
       </form>
 
       <div
-        className={`p-4 rounded w-full ${
+        className={`p-4 rounded w-fit ${
           error
             ? 'bg-red-900 text-red-200'
             : 'bg-black text-red-500 border-2 border-[#A7FF18]'
