@@ -1,14 +1,21 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import { auth, db } from "../../../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
 import Header from '../Header'
 import Scan from '../Scan';
-
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
+
 import Footer from '../Footer';
 
 const Login = () => {
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+
   return (
     <main className='mt-5'>
         <form className='flex flex-col justify-center items-center gap-5'>
@@ -21,12 +28,7 @@ const Login = () => {
                         </span>
                     </p>
                 </div>
-
-                <div className='flex flex-col lg:flex-row gap-2 justify-center items-center'>
-                    <FaRegUserCircle size={28} color='#A7FF18'/>
-                    <input required type='text' className="w-full rounded-lg border border-[#A7FF18] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:ring-offset-2 focus:ring-offset-[#A7FF18]" placeholder="Username"/>
-                </div>
-
+                
                 <div className='flex flex-col lg:flex-row gap-2 justify-center items-center'>
                     <TbLockPassword size={30} color='#A7FF18'/>
                     <input required type='email' className="w-full rounded-lg border border-[#A7FF18] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:ring-offset-2 focus:ring-offset-[#A7FF18]" placeholder="Email" />
