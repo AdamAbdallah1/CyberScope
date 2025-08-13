@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
+import Header from './Header';
 
 const Scan = () => {
 
