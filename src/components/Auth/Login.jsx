@@ -16,6 +16,22 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const uid = userCredential.user.uid;
+
+            const userDoc = await getDoc(doc(db, "users", uid));
+            if (userDoc.exists()) {
+                console.log("Username: ", userDoc.data().username);
+            }
+            console.log("User logged in: ", userCredential.user);
+        } catch (err) {
+            setError(err.message);
+        }
+    };
+
   return (
     <main className='mt-5'>
         <form className='flex flex-col justify-center items-center gap-5'>
