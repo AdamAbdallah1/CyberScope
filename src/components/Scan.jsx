@@ -61,7 +61,7 @@ const Scan = () => {
 
           <div className="relative">
             <input
-              className="w-full bg-transparent text-red-500 text-base border-2 border-[#A7FF18] rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:border-[#A7FF18] placeholder-[#d4ff8f] pr-10"
+              className="w-fit bg-transparent text-red-500 text-base border-2 border-[#A7FF18] rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:border-[#A7FF18] placeholder-[#d4ff8f] pr-10"
               placeholder="➤ ENTER DOMAIN"
               id="domain"
               type="text"
