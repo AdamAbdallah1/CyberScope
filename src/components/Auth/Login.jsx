@@ -9,20 +9,13 @@ import { TbLockPassword } from "react-icons/tb";
 import Footer from '../Footer';
 
 const Login = () => {
-
-    const login = () => {
-        return (
-            <Scan />
-        )
-    }
   return (
     <main className='mt-5'>
-        <Header/>
         <form className='flex flex-col justify-center items-center gap-5'>
-            <div className='w-100 flex flex-col gap-3 p-8 border-2 border-[#A7FF18] rounded-3xl items-center'>
+            <div className='w-fit flex flex-col gap-3 p-8 border-2 border-[#A7FF18] rounded-3xl items-center'>
                 <div className="mt-4 flex flex-col gap-2">
                     <p className="text-xs text-[#A7FF18] opacity-80 flex items-center gap-2">
-                        <span className="w-5 h-5 bg-red-500 rounded-full"></span>
+                        <span className="w-4 h-4 bg-red-500 rounded-full"></span>
                         <span>
                             <span className="text-[#A7FF18] text-3xl font-sans">Login</span>
                         </span>
@@ -31,21 +24,21 @@ const Login = () => {
 
                 <div className='flex flex-col lg:flex-row gap-2 justify-center items-center'>
                     <FaRegUserCircle size={28} color='#A7FF18'/>
-                    <input required type='text' className="bg-slate-900 w-full rounded-lg border border-[#A7FF18] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:ring-offset-2 focus:ring-offset-[#A7FF18]" placeholder="Username"/>
+                    <input required type='text' className="w-full rounded-lg border border-[#A7FF18] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:ring-offset-2 focus:ring-offset-[#A7FF18]" placeholder="Username"/>
                 </div>
 
                 <div className='flex flex-col lg:flex-row gap-2 justify-center items-center'>
                     <TbLockPassword size={30} color='#A7FF18'/>
-                    <input required type='email' className="bg-slate-900 w-full rounded-lg border border-[#A7FF18] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:ring-offset-2 focus:ring-offset-[#A7FF18]" placeholder="Email" />
+                    <input required type='email' className="w-full rounded-lg border border-[#A7FF18] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:ring-offset-2 focus:ring-offset-[#A7FF18]" placeholder="Email" />
                 </div>
                 
                 <div className='flex flex-col lg:flex-row gap-2 justify-center items-center'>
                     <MdOutlineEmail size={30} color='#A7FF18'/>
-                    <input required type='password' className="bg-slate-900 w-full rounded-lg border border-[#A7FF18] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:ring-offset-2 focus:ring-offset-[#A7FF18]" placeholder="Password" />
+                    <input required type='password' className="w-full rounded-lg border border-[#A7FF18] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:ring-offset-2 focus:ring-offset-[#A7FF18]" placeholder="Password" />
                 </div>
 
                 
-                <label className="flex cursor-pointer items-center justify-between p-1 text-slate-400">
+                <label className="flex gap-2 cursor-pointer p-1 text-slate-400">
                     Accept terms of use
                     <div className="relative inline-block">
                         <input className="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-[#A7FF18] bg-gary-400 checked:border-green-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2" type="checkbox" required/>
@@ -53,10 +46,9 @@ const Login = () => {
                     </div>
                 </label>
 
-                <button onClick={(e) => login()} type='submit' className="inline-block cursor-pointer rounded-md bg-[#A7FF18] px-4 py-3.5 text-center text-sm font-semibold uppercase text-black transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95 hover:text-[#A7FF18]">Register</button>
+                <button onClick={(e) => login()} type='submit' className="w-full inline-block cursor-pointer rounded-md bg-[#A7FF18] px-4 py-3.5 text-center text-sm font-semibold uppercase text-black transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95 hover:text-[#A7FF18]">Register</button>
             </div>
         </form>
-        <Footer />
     </main>
   )
 }
