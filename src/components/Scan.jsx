@@ -90,7 +90,7 @@ const Scan = () => {
 
         <button
           type="submit"
-          className="relative cursor-pointer px-8 py-3 bg-black text-[#A7FF18] font-semibold rounded-lg border-2 border-[#A7FF18] hover:border-[#A7FF18] transition-all duration-300 hover:shadow-[0_0_20px_10px_rgba(167,255,24,0.6)] active:scale-95 active:shadow-[0_0_20px_10px_rgba(167,255,24,0.6)] group"
+          className="relative cursor-pointer px-8 py-3 text-[#A7FF18] font-semibold rounded-lg border-2 border-[#A7FF18] hover:border-[#A7FF18] transition-all duration-300 hover:shadow-[0_0_20px_10px_rgba(167,255,24,0.6)] active:scale-95 active:shadow-[0_0_20px_10px_rgba(167,255,24,0.6)] group"
         >
           <span className="flex items-center space-x-2">
             <svg
@@ -116,7 +116,7 @@ const Scan = () => {
       </form>
 
       <div
-        className={`p-4 rounded w-fit ${
+        className={`p-4 rounded-tl-3xl rounded-br-3xl w-fit ${
           error
             ? 'text-red-200'
             : 'text-red-500 border-2 border-[#A7FF18]'
