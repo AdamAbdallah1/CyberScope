@@ -4,6 +4,7 @@ import { auth } from '../../firebase';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import Navbar from './Navbar';
 import TargetCursor from './TargetCursor'; 
+import TextType from './TextType';
 
 const Scan = () => {
   const [data, setData] = useState(null);
@@ -57,7 +58,6 @@ const Scan = () => {
   return (
     <>
       <Navbar />
-      {/* 👇 Add the custom animated cursor */}
       <TargetCursor 
         targetSelector=".cursor-target"
         spinDuration={2}
@@ -73,7 +73,6 @@ const Scan = () => {
               <span className="ml-2 opacity-75 animate-pulse">▋</span>
             </label>
 
-            {/* 👇 Add cursor-target here */}
             <input
               className="cursor-target w-fit bg-transparent text-red-500 text-base border-2 border-[#A7FF18] rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#A7FF18] focus:border-[#A7FF18] placeholder-[#d4ff8f] pr-10"
               placeholder="➤ ENTER DOMAIN"
@@ -93,7 +92,6 @@ const Scan = () => {
             </div>
           </div>
 
-          {/* 👇 Add cursor-target here */}
           <button 
             type="submit" 
             className="cursor-target relative cursor-pointer px-8 py-3 text-[#A7FF18] font-semibold rounded-lg border-2 border-[#A7FF18] hover:border-[#A7FF18] transition-all duration-300 hover:shadow-[0_0_20px_10px_rgba(167,255,24,0.6)] active:scale-95 active:shadow-[0_0_20px_10px_rgba(167,255,24,0.6)] group"
@@ -107,20 +105,40 @@ const Scan = () => {
           </button>
         </form>
 
-        <div className={`p-4 rounded-tl-3xl rounded-br-3xl w-fit ${error ? 'text-red-200' : 'text-red-500 border-2 border-[#A7FF18]'}`}>
-          {loading && <p>Loading...</p>}
-          {error && <p className="w-60"><strong className="text-[#A7FF18]">Error:</strong> {error}</p>}
-          {data && (
-            <div className="flex flex-col gap-2 cursor-crosshair">
-              <p><strong className="text-[#A7FF18]">Domain:</strong> {domain}</p>
-              <p><strong className="text-[#A7FF18]">Resolved IP:</strong> {ip}</p>
-              <p><strong className="text-[#A7FF18]">Hostnames:</strong> {data.hostnames?.length ? data.hostnames.join(', ') : 'None'}</p>
-              <p><strong className="text-[#A7FF18]">Open Ports:</strong> {data.ports?.length ? data.ports.join(', ') : 'None'}</p>
-              <p><strong className="text-[#A7FF18]">Vulns:</strong> {data.vulns?.length ? data.vulns.join(', ') : 'None'}</p>
-              <p><strong className="text-[#A7FF18]">Tags:</strong> {data.tags?.length ? data.tags.join(', ') : 'None'}</p>
-            </div>
-          )}
-        </div>
+        <div
+  className={`p-4 rounded-tl-3xl rounded-br-3xl w-fit ${
+    error ? 'text-red-200' : 'text-red-500 border-2 border-[#A7FF18]'
+  }`}
+>
+  {loading && <p>Loading...</p>}
+  {error && (
+    <p className="w-60">
+      <strong className="text-[#A7FF18]">Error:</strong> {error}
+    </p>
+  )}
+  {data && (
+  <div className="flex flex-col gap-2 cursor-crosshair">
+    <TextType
+      text={[`
+Domain: ${domain}
+Resolved IP: ${ip}
+Hostnames: ${data.hostnames?.length ? data.hostnames.join(', ') : 'None'}
+Open Ports: ${data.ports?.length ? data.ports.join(', ') : 'None'}
+Vulns: ${data.vulns?.length ? data.vulns.join(', ') : 'None'}
+Tags: ${data.tags?.length ? data.tags.join(', ') : 'None'}
+`]}
+      typingSpeed={50}
+      pauseDuration={2000}
+      showCursor={true}
+      cursorCharacter="▋"
+      className="text-[#A7FF18] font-mono whitespace-pre-line"
+      loop={false}          
+      hideCursorWhileTyping={false} 
+    />
+  </div>
+)}
+</div>
+
       </main>
     </>
   );
