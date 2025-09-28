@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Scan from './components/Scan';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
+import Home from "./components/Home";
 
 const App = () => {
   return (
@@ -16,7 +17,8 @@ const App = () => {
       </div>
 
       <Routes>
-        <Route path="/CyberScope" element={<Login />} />
+        <Route path="/CyberScope" element={<Home />} />
+        <Route path="/CyberScope/login" element={<Login />} />
         <Route path="/CyberScope/register" element={<Register />} />
         <Route path="/CyberScope/scan" element={<Scan />} />
       </Routes>
